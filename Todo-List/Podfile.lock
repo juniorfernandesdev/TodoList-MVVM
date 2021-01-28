@@ -296,17 +296,21 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - IQKeyboardManager (6.5.6)
   - leveldb-library (1.22)
+  - LGSideMenuController (2.1.1)
   - nanopb (2.30906.0):
     - nanopb/decode (= 2.30906.0)
     - nanopb/encode (= 2.30906.0)
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.12)
+  - SideMenu (6.5.0)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Firestore
   - IQKeyboardManager
+  - LGSideMenuController
+  - SideMenu
 
 SPEC REPOS:
   trunk:
@@ -324,8 +328,10 @@ SPEC REPOS:
     - GTMSessionFetcher
     - IQKeyboardManager
     - leveldb-library
+    - LGSideMenuController
     - nanopb
     - PromisesObjC
+    - SideMenu
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -342,9 +348,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  LGSideMenuController: ae40c80983ab8b8801c7cef0a6804d43aaa72d45
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: 2cf32d9fa0dda6101e650481da1dbf0bb363a05b
+PODFILE CHECKSUM: efbf8bc5d3d99d86428b172cac216b01cb067771
 
 COCOAPODS: 1.9.3

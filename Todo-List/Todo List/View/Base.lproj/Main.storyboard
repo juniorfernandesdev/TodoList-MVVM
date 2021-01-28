@@ -23,7 +23,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="YKY-UQ-406">
                                 <rect key="frame" x="40" y="390.5" width="334" height="115"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NsO-Uc-zNm">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2020@2020.com" borderStyle="roundedRect" placeholder="Digite seu e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NsO-Uc-zNm">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <color key="backgroundColor" name="TexFildBg"/>
                                         <constraints>
@@ -33,7 +33,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite sua senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-kr-RWI">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123123" borderStyle="roundedRect" placeholder="Digite sua senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fIZ-kr-RWI">
                                         <rect key="frame" x="0.0" y="65" width="334" height="50"/>
                                         <color key="backgroundColor" name="TexFildBg"/>
                                         <constraints>
@@ -239,6 +239,44 @@
             </objects>
             <point key="canvasLocation" x="936" y="792"/>
         </scene>
+        <!--Home View Controller-->
+        <scene sceneID="Lqc-Vj-bXY">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="hTY-In-tYs" customClass="HomeViewController" customModule="Todo_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wQ2-ja-gUX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="K2a-A7-YmS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MU-Pd-6ZK">
+                                <rect key="frame" x="20" y="64" width="21" height="22"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="line.horizontal.3" catalog="system">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapMenuButton:" destination="hTY-In-tYs" eventType="touchUpInside" id="haK-r3-zhP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2lk-R8-dt5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K2a-A7-YmS" firstAttribute="trailing" secondItem="2lk-R8-dt5" secondAttribute="trailing" id="Gwc-g3-Xnu"/>
+                            <constraint firstItem="K2a-A7-YmS" firstAttribute="top" secondItem="wQ2-ja-gUX" secondAttribute="top" id="RYf-Ls-HuD"/>
+                            <constraint firstAttribute="bottom" secondItem="K2a-A7-YmS" secondAttribute="bottom" id="Xuh-uw-PAN"/>
+                            <constraint firstItem="9MU-Pd-6ZK" firstAttribute="top" secondItem="2lk-R8-dt5" secondAttribute="top" constant="20" id="l4E-2p-7xo"/>
+                            <constraint firstItem="9MU-Pd-6ZK" firstAttribute="leading" secondItem="2lk-R8-dt5" secondAttribute="leading" constant="20" id="pTI-9F-WBj"/>
+                            <constraint firstItem="K2a-A7-YmS" firstAttribute="leading" secondItem="2lk-R8-dt5" secondAttribute="leading" id="qsq-fj-EiV"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzx-TN-k5g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955.072463768116" y="782.8125"/>
+        </scene>
         <!--Lista-->
         <scene sceneID="XZE-yB-p4m">
             <objects>
@@ -343,6 +381,7 @@
         <image name="bg" width="428" height="926"/>
         <image name="bt-close" width="30" height="30"/>
         <image name="img_user_register" width="152" height="152"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
         <image name="logo" width="135" height="135"/>
         <namedColor name="ButtonColor">
             <color red="0.80400002002716064" green="0.71799999475479126" blue="0.83499997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

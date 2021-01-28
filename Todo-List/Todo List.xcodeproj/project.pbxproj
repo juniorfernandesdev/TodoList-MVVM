@@ -10,6 +10,8 @@
 		0FE8BA82BCD31CF9650B9C59 /* Pods_Todo_List_Todo_ListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF30B3F8606382C9D2D38A7 /* Pods_Todo_List_Todo_ListUITests.framework */; };
 		7853F0815A2D83CABC52E6AB /* Pods_Todo_List.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D049347EE7756F309098B6E7 /* Pods_Todo_List.framework */; };
 		80F57CE02EFC51B8B1A342DB /* Pods_Todo_ListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E9A225316CA1A943CD954E /* Pods_Todo_ListTests.framework */; };
+		921D3B6C25C350270027913A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921D3B6B25C350270027913A /* MenuViewController.swift */; };
+		923285F825C315CC00789419 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923285F725C315CC00789419 /* HomeViewController.swift */; };
 		92838EEE25BF77DF005D3950 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92838EED25BF77DF005D3950 /* Network.swift */; };
 		92838F0825BF79D9005D3950 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92838F0725BF79D9005D3950 /* LoginViewController.swift */; };
 		92838F0E25BF7F3F005D3950 /* ListTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92838F0D25BF7F3F005D3950 /* ListTodoViewController.swift */; };
@@ -49,6 +51,8 @@
 		3EF30B3F8606382C9D2D38A7 /* Pods_Todo_List_Todo_ListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todo_List_Todo_ListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A94530A7CC9655171E32143 /* Pods-Todo ListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todo ListTests.debug.xcconfig"; path = "Target Support Files/Pods-Todo ListTests/Pods-Todo ListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8BDF68603689754284EE8B72 /* Pods-Todo List-Todo ListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todo List-Todo ListUITests.release.xcconfig"; path = "Target Support Files/Pods-Todo List-Todo ListUITests/Pods-Todo List-Todo ListUITests.release.xcconfig"; sourceTree = "<group>"; };
+		921D3B6B25C350270027913A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		923285F725C315CC00789419 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		92838EED25BF77DF005D3950 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		92838F0725BF79D9005D3950 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		92838F0D25BF7F3F005D3950 /* ListTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTodoViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,22 @@
 				E12E7B35F05F001518271F5F /* Pods-Todo ListTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		923285F625C315C100789419 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				923285F725C315CC00789419 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9232861725C31B5300789419 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				921D3B6B25C350270027913A /* MenuViewController.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		92838F0525BF79B6005D3950 /* Login */ = {
@@ -239,6 +259,8 @@
 		92D54A0925BF7735003FF3AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9232861725C31B5300789419 /* Menu */,
+				923285F625C315C100789419 /* Home */,
 				92A4673125C1DF5700334BF5 /* Register */,
 				92838F1525BF864E005D3950 /* AddList */,
 				92838F0C25BF7F2E005D3950 /* List */,
@@ -490,10 +512,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				92D549D025BF75F8003FF3AC /* ViewController.swift in Sources */,
+				921D3B6C25C350270027913A /* MenuViewController.swift in Sources */,
 				92D549CC25BF75F8003FF3AC /* AppDelegate.swift in Sources */,
 				92844E4225BF869B00B384A2 /* AddListViewController.swift in Sources */,
 				92A4673325C1DF6F00334BF5 /* RegisterViewController.swift in Sources */,
 				92838EEE25BF77DF005D3950 /* Network.swift in Sources */,
+				923285F825C315CC00789419 /* HomeViewController.swift in Sources */,
 				92838F0825BF79D9005D3950 /* LoginViewController.swift in Sources */,
 				92838F0E25BF7F3F005D3950 /* ListTodoViewController.swift in Sources */,
 				92D549CE25BF75F8003FF3AC /* SceneDelegate.swift in Sources */,
