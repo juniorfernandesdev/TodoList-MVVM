@@ -39,12 +39,24 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction func actionRegisterUser(_ sender: UIButton) {
-        Network.shared.createUser(email: self.ftEmail.text!, password: self.tfPassword.text!) { (uid, error) in
-            print("teste")
+        if self.checkFields() == true {
+            Network.shared.createUser(email: self.ftEmail.text!, password: self.tfPassword.text!) { (uid, error) in
+                print("Cadastrao realizado com sucesso")
+                self.dismiss(animated: true, completion: nil)
+            }
+        } else {
+            print("Campo vazio")
         }
+
     }
 
     //MARK: Methods
+    private func checkFields() -> Bool {
+        if !self.ftEmail.text!.isEmpty && !self.tfName.text!.isEmpty && !self.tfPassword.text!.isEmpty {
+            return true
+        }
+        return false
+    }
 
     private func registerUser() {
 
