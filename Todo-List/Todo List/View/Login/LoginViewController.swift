@@ -59,17 +59,18 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func actionLogin(_ sender: Any) {
-        Network.shared.createUser(email: self.tfLogin.text!, password: self.tfPassword.text!) { (id, error) in
-            guard let id = id else {
-                print("Mensagem de erro: \(error)")
+        Network.shared.login(email: self.tfLogin.text!, password: self.tfPassword.text!) { (uid, error) in
+
+            guard let id = uid else {
+                print(error!.description)
                 return
             }
 
-            let vc = ListTodoViewController()
+
+            let story = UIStoryboard.init(name: "Main", bundle: Bundle.main);
+            let vc = story.instantiateViewController(withIdentifier: "HomeViewController");
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
-
-            
         }
     }
 }
