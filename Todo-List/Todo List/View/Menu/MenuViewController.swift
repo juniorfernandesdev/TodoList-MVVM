@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol Logout {
+    func logout()
+}
+
 class MenuViewController: UIViewController {
+    var delegate: Logout?
+
     lazy var profileImage: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(named: "SecondColor")
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = view.frame.width / 2
+        view.layer.cornerRadius = 113 / 2
         view.layer.masksToBounds = true
 
         return view
@@ -24,10 +30,22 @@ class MenuViewController: UIViewController {
         text.textAlignment = .right
         text.borderStyle = .none
         text.textColor = .white
-        text.font = UIFont.systemFont(ofSize: 31, weight: .bold)
-        text.text = "Junior Fernandes"
+        text.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        text.text = "Junior \nFernandes"
         return text
     }()
+
+    fileprivate lazy var buttonLogOut: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = UIColor(named: "ButtonColor")
+        button.setTitleColor(UIColor(named: "PrimaryColor"), for: .normal)
+        button.setTitle("Sair", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(sair), for: .touchUpInside)
+
+        return button
+        }()
 
     fileprivate lazy var headerView: UIView = {
         let view = UIView()
@@ -42,6 +60,7 @@ class MenuViewController: UIViewController {
         self.view.addSubview(profileImage)
         self.view.addSubview(headerView)
         self.view.addSubview(userName)
+        self.view.addSubview(buttonLogOut)
         view.layer.backgroundColor = UIColor(named: "PrimaryColor")?.cgColor
         self.setupView()
     }
@@ -49,16 +68,22 @@ class MenuViewController: UIViewController {
     func setupView() {
         //Image profile
         NSLayoutConstraint.activate([
-            profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 45),
+            profileImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             profileImage.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35),
             profileImage.heightAnchor.constraint(equalToConstant: 113),
             profileImage.widthAnchor.constraint(equalToConstant: 113)
         ])
 
         NSLayoutConstraint.activate([
-            userName.topAnchor.constraint(equalTo: profileImage.bottomAnchor),
+            userName.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 30),
             userName.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35),
             userName.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35),
+        ])
+
+        NSLayoutConstraint.activate([
+            buttonLogOut.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30),
+            buttonLogOut.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 35),
+            buttonLogOut.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -35),
         ])
 
 
@@ -71,6 +96,14 @@ class MenuViewController: UIViewController {
             headerView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
 
       ])
+    }
+
+    @objc func sair() {
+        Network.shared.logoutUser()
+        
+        dismiss(animated: true) {
+            self.delegate?.logout()
+        }
     }
 
 }

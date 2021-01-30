@@ -9,10 +9,17 @@ import SideMenu
 import UIKit
 
 class HomeViewController: UIViewController {
-    let sideMenu = SideMenuNavigationController(rootViewController: MenuViewController())
+    let vc = MenuViewController()
+    var sideMenu: SideMenuNavigationController
+
+    required init?(coder: NSCoder) {
+        self.sideMenu = SideMenuNavigationController(rootViewController: vc)
+        super.init(coder: coder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        vc.delegate = self
         sideMenu.leftSide = true
         sideMenu.presentationStyle = .menuSlideIn
         sideMenu.setNavigationBarHidden(true, animated: false)
@@ -23,5 +30,10 @@ class HomeViewController: UIViewController {
     @IBAction func didTapMenuButton(_ sender: UIButton) {
         self.present(sideMenu, animated: true)
     }
+}
 
+extension HomeViewController: Logout {
+    func logout() {
+        dismiss(animated: true, completion: nil)
+    }
 }
