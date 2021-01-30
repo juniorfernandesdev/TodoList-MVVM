@@ -40,6 +40,14 @@ class Network {
         }
     }
 
+    func logoutUser() {
+        do {
+            try! loginManager.signOut()
+        } catch let signOutError as NSError {
+            print("ERROR %@", signOutError)
+        }
+    }
+
     func addTodo(title: [String]) {
         dbManager.collection("todo").document(loginManager.currentUser!.uid).setData(["tarefas" : title])
     }
